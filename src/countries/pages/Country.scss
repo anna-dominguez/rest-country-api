@@ -1,0 +1,138 @@
+.country {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 80px;
+
+  button {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: transparent;
+  }
+
+  section {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+    width: 100%;
+
+    img {
+      border-radius: 10.006px;
+      box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.03);
+      width: 100%;
+      max-height: 400px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 23px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    .country-details__content {
+      display: flex;
+      justify-content: space-between;
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        .detail {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+
+          p {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+
+    .border-countries {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 68px;
+
+      .borders {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .border {
+          cursor: pointer;
+          padding: 5px 27px;
+          border-radius: 2px;
+          border: 0px solid #979797;
+          box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+          font-size: 14px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .country {
+    margin-top: 40px;
+
+    button {
+      border-radius: 2px;
+      background: #fff;
+
+      box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
+    }
+
+    section {
+      margin-top: 64px;
+      margin-bottom: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+      font-size: 14px;
+
+      h1 {
+        font-size: 22px;
+      }
+
+      h3 {
+        font-size: 14px;
+      }
+
+      .country-details__content {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .border-countries {
+        margin-top: 34px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        h3 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

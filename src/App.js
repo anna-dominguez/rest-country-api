@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import './App.scss'
+import Header from './shared/components/Header/Header'
+import Countries from './countries/pages/Countries'
+import Country from './countries/pages/Country'
+
+const allCountries = (await axios('https://restcountries.com/v3.1/all')).data
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Header />
+
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={<Countries countries={allCountries} />}
+          />
+          <Route
+            path="/:countryName"
+            exact
+            element={<Country countries={allCountries} />}
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+    // <main>
+
+    // </main>
+  )
 }
 
-export default App;
+export default App
