@@ -5,7 +5,7 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 import './Search.scss'
 
 const Search = ({ handleSearch, search, handleSearchByRegion }) => {
-  const regions = ['Africa', ' Americas', 'Asia', 'Europe', 'Oceania']
+  const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
   const [openRegions, setOpenRegion] = useState(false)
 
   return (
